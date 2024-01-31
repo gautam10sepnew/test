@@ -2,6 +2,7 @@ library social_signin_buttons;
 
 import 'package:flutter/material.dart';
 import 'package:social_signin_buttons/signup.dart';
+import 'package:social_signin_buttons/social_signin_buttons.dart';
 
 class MyNavigationBar extends StatefulWidget {
   MyNavigationBar ({Key? key}) : super(key: key);
@@ -38,7 +39,76 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
           backgroundColor: Colors.green
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: _selectedIndex == 2?
+        Container(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SignInButton(
+                  Buttons.Google,
+                  onPressed: () {
+                    _showButtonPressDialog(context, 'Google');
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SignInButton(
+                  Buttons.Facebook,
+                  onPressed: () {
+                    _showButtonPressDialog(context, 'Facebook');
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SignInButton(
+                  Buttons.Apple,
+                  onPressed: () {
+                    _showButtonPressDialog(context, 'Apple');
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SignInButton(
+                  Buttons.Microsoft,
+                  onPressed: () {
+                    _showButtonPressDialog(context, 'Microsoft');
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SignInButton(
+                  Buttons.GitHub,
+                  text: "Sign up with GitHub",
+                  onPressed: () {
+                    _showButtonPressDialog(context, 'Github');
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SignInButton(
+                  Buttons.Twitter,
+                  text: "Sign In with Twitter",
+                  onPressed: () {
+                    _showButtonPressDialog(context, 'Twitter');
+                  },
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
+          ),
+        )
+            :_widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
@@ -66,5 +136,12 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
           elevation: 5
       ),
     );
+  }
+  void _showButtonPressDialog(BuildContext context, String btn) {
+    // Scaffold.of(context).showSnackBar(SnackBar(
+    //   content: Text('$btn Button Pressed!'),
+    //   backgroundColor: Colors.black26,
+    //   duration: Duration(milliseconds: 400),
+    // ));
   }
 }
