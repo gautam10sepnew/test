@@ -1,6 +1,7 @@
 library social_signin_buttons;
 
 import 'package:flutter/material.dart';
+import 'package:social_signin_buttons/signup.dart';
 
 class MyNavigationBar extends StatefulWidget {
   MyNavigationBar ({Key? key}) : super(key: key);
@@ -18,6 +19,12 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
   ];
 
   void _onItemTapped(int index) {
+    if (index==1){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const SignUpApp()),
+      );
+    }
     setState(() {
       _selectedIndex = index;
     });
