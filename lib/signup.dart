@@ -2,18 +2,7 @@ library social_signin_buttons;
 
 import 'package:flutter/material.dart';
 
-class SignUpApp extends StatelessWidget {
-  const SignUpApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/': (context) => const SignUpScreen(),
-      },
-    );
-  }
-}
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

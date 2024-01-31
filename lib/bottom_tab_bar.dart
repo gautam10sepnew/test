@@ -22,7 +22,7 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
     if (index==1){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const SignUpApp()),
+        MaterialPageRoute(builder: (context) => const SignUpScreen()),
       );
     }
     setState(() {
