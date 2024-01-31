@@ -1,3 +1,5 @@
+library social_signin_buttons;
+
 import 'package:flutter/material.dart';
 
 class SignUpApp extends StatelessWidget {
